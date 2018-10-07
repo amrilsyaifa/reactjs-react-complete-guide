@@ -4,16 +4,38 @@ import classes from './App.css';
 import Persons from '../components/persons/Persons'
 import Cockpit from '../components/cockpit/Cockpit'
 class App extends Component {
-  state = {
-    persons: [
-      {id: '1a', name: 'amril', hobby: 'Ngopi' },
-      {id: '1b', name: 'syaifa', hobby: 'ngoding' },
-      {id: '1c', name: 'yasin', hobby: 'ngeteh' },
-      {id: '1d', name: 'yoga', hobby: 'ngupil' },
-      {id: '1e', name: 'dirga', hobby: 'Joget' }
-    ],
-    showPersons : false
+  constructor (props) {
+    super(props)
+    console.log('[App.js] inside Constructor', props)
+    this.state = {
+      persons: [
+        {id: '1a', name: 'amril', hobby: 'Ngopi' },
+        {id: '1b', name: 'syaifa', hobby: 'ngoding' },
+        {id: '1c', name: 'yasin', hobby: 'ngeteh' },
+        {id: '1d', name: 'yoga', hobby: 'ngupil' },
+        {id: '1e', name: 'dirga', hobby: 'Joget' }
+      ],
+      showPersons : false
+    }
   }
+
+  componentWillMount () {
+    console.log('[App.js] Inside CoponentWIllMount()')
+  }
+
+  componentDidMount() {
+    console.log('[App.js] Inside componentDidMount()')
+  }
+  // state = {
+  //   persons: [
+  //     {id: '1a', name: 'amril', hobby: 'Ngopi' },
+  //     {id: '1b', name: 'syaifa', hobby: 'ngoding' },
+  //     {id: '1c', name: 'yasin', hobby: 'ngeteh' },
+  //     {id: '1d', name: 'yoga', hobby: 'ngupil' },
+  //     {id: '1e', name: 'dirga', hobby: 'Joget' }
+  //   ],
+  //   showPersons : false
+  // }
 
   removeNameHandler = (personIndex) => {
     // const persons = this.state.persons sama
@@ -42,6 +64,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] Inside Render()')
     let persons = null
 
     if (this.state.showPersons) {
