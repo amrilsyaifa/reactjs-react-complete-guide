@@ -14,6 +14,24 @@ constructor (props) {
     componentDidMount() {
     console.log('[Persons.js] Inside componentDidMount()')
     }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('[UPDATE Persons.js] Inside componentWillReceiveProps()', nextProps)
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[UPDATE Persons.js] Inside shouldComponentUpdate()',nextProps,nextState)
+        return nextProps.persons !== this.props.persons
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('[UPDATE Person.js] Inside componentWillUpdate()',nextProps, nextState )
+    }
+
+    componentDidUpdate() {
+        console.log('[UPDATE Person.js] Inside componentDidUpdate()')
+    }
+
     render() {
         console.log('[Persons.js] Inside Render()')
         return this.props.persons.map((person, index) => {
