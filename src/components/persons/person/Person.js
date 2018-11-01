@@ -16,12 +16,17 @@ class Person extends Component {
         }
     render () {
         console.log('[Person.js] Inside Render()')
-        return (
-            <div className={classes.Person} >
-                <p onClick={this.props.click}> Saya {this.props.name}, umur {Math.floor(Math.random() * 10 )} hobby {this.props.hobby} {this.props.children} </p>
-                <input type="text" onChange={this.props.change} value={this.props.name} />
-            </div>
-        )
+        // return (
+        //     <div className={classes.Person} >
+        //         <p onClick={this.props.click}> Saya {this.props.name}, umur {Math.floor(Math.random() * 10 )} hobby {this.props.hobby} {this.props.children} </p>
+        //         <input type="text" onChange={this.props.change} value={this.props.name} />
+        //     </div>
+        // )
+
+        return [
+            <p key="1" onClick={this.props.click}> Saya {this.props.name}, umur {Math.floor(Math.random() * 10 )} hobby {this.props.hobby} {this.props.children} </p>,
+            <input key="2" type="text" onChange={this.props.change} value={this.props.name} />
+        ]
     }
 }
 
