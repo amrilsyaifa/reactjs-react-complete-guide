@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from '../components/persons/Persons'
 import Cockpit from '../components/cockpit/Cockpit'
+import WithClass from '../hoc/WithClass'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -93,7 +95,7 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <Cockpit 
           AppTitle={this.props.title}
           persons={this.state.persons}
@@ -101,7 +103,7 @@ class App extends Component {
           showPersons={this.state.showPersons}
         />
         {persons}
-      </div>
+      </WithClass>
     );
   }
 }
