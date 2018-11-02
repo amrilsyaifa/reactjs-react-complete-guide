@@ -18,7 +18,8 @@ class App extends Component {
         {id: '1d', name: 'yoga', hobby: 'ngupil' },
         {id: '1e', name: 'dirga', hobby: 'Joget' }
       ],
-      showPersons : false
+      showPersons : false,
+      toggleClicked: 0
     }
   }
 
@@ -63,7 +64,12 @@ class App extends Component {
 
   toggleHandlerPerson = () => {
     const doesShow = this.state.showPersons
-    this.setState({showPersons : !doesShow})
+    this.setState( (prevState, props) => {
+      return {
+        showPersons : !doesShow, 
+        toggleClicked: prevState.toggleClicked + 1
+      }
+    })
   }
 
   changeName = (event, id) => {
