@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classes from './Person.css'
 import Aux from '../../../hoc/Auxs'
 import withClass from '../../../hoc/withClass'
@@ -20,11 +21,20 @@ class Person extends Component {
         console.log('[Person.js] Inside Render()')
         return (
             <Aux >
-                <p onClick={this.props.click}> Saya {this.props.name}, umur {Math.floor(Math.random() * 10 )} hobby {this.props.hobby} {this.props.children} </p>
+                {console.log('iniiiiiiii',this.props)}
+                <p onClick={this.props.click}> Saya {this.props.name}, umur {this.props.age} hobby {this.props.hobby} {this.props.children} </p>
                 <input type="text" onChange={this.props.change} value={this.props.name} />
             </Aux>
         )
     }
+}
+
+Person.propTypes = {
+    click: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    hobby: PropTypes.string,
+    change: PropTypes.func
 }
 
 export default withClass(Person, classes.Person)

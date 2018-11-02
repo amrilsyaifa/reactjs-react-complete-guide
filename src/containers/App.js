@@ -12,11 +12,11 @@ class App extends Component {
     console.log('[App.js] inside Constructor', props)
     this.state = {
       persons: [
-        {id: '1a', name: 'amril', hobby: 'Ngopi' },
-        {id: '1b', name: 'syaifa', hobby: 'ngoding' },
-        {id: '1c', name: 'yasin', hobby: 'ngeteh' },
-        {id: '1d', name: 'yoga', hobby: 'ngupil' },
-        {id: '1e', name: 'dirga', hobby: 'Joget' }
+        {id: '1a', name: 'amril', hobby: 'Ngopi', age: 28},
+        {id: '1b', name: 'syaifa', hobby: 'ngoding', age: 29 },
+        {id: '1c', name: 'yasin', hobby: 'ngeteh', age: 13 },
+        {id: '1d', name: 'yoga', hobby: 'ngupil', age: 17 },
+        {id: '1e', name: 'dirga', hobby: 'Joget', age: 20 }
       ],
       showPersons : false,
       toggleClicked: 0

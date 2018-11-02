@@ -38,6 +38,7 @@ constructor (props) {
             return <Person 
                 name={person.name} 
                 hobby={person.hobby}
+                age={person.age}
                 click={() => this.props.clicked(index)}
                 change={(event) => this.props.changed(event, person.id)}
                 key={person.id}
