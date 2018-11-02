@@ -15,7 +15,9 @@ class Person extends Component {
         }
     
         componentDidMount() {
-        console.log('[Person.js] Inside componentDidMount()')
+        if (this.props.position === 0) {
+            this.inputElement.focus()
+        }
         }
     render () {
         console.log('[Person.js] Inside Render()')
@@ -23,7 +25,12 @@ class Person extends Component {
             <Aux >
                 {console.log('iniiiiiiii',this.props)}
                 <p onClick={this.props.click}> Saya {this.props.name}, umur {this.props.age} hobby {this.props.hobby} {this.props.children} </p>
-                <input type="text" onChange={this.props.change} value={this.props.name} />
+                <input 
+                    ref={(inp) => {this.inputElement = inp}} //membuat focus jika ref inp = this.inputElement setelah componenetDidMount akan memanggil inp dengan nilai index 0
+                    type="text" 
+                    onChange={this.props.change} 
+                    value={this.props.name} 
+                />
             </Aux>
         )
     }

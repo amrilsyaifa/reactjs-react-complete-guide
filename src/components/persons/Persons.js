@@ -37,6 +37,7 @@ constructor (props) {
         return this.props.persons.map((person, index) => {
             return <Person 
                 name={person.name} 
+                position={index}
                 hobby={person.hobby}
                 age={person.age}
                 click={() => this.props.clicked(index)}
