@@ -48,4 +48,4 @@ Person.propTypes = {
     change: PropTypes.func
 }
 
-export default Person
+export default withClass(Person, classes.Person)
