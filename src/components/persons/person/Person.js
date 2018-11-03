@@ -8,6 +8,7 @@ class Person extends Component {
     constructor (props) {
         super(props)
         console.log('[Person.js] inside Constructor', props)
+        this.inputElement = React.createRef()
         }
     
         componentWillMount () {
@@ -16,7 +17,7 @@ class Person extends Component {
     
         componentDidMount() {
         if (this.props.position === 0) {
-            this.inputElement.focus()
+            this.inputElement.current.focus()
         }
         }
     render () {
@@ -26,7 +27,7 @@ class Person extends Component {
                 {console.log('iniiiiiiii',this.props)}
                 <p onClick={this.props.click}> Saya {this.props.name}, umur {this.props.age} hobby {this.props.hobby} {this.props.children} </p>
                 <input 
-                    ref={(inp) => {this.inputElement = inp}} //membuat focus jika ref inp = this.inputElement setelah componenetDidMount akan memanggil inp dengan nilai index 0
+                    ref={this.inputElement}
                     type="text" 
                     onChange={this.props.change} 
                     value={this.props.name} 
