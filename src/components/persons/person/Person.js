@@ -16,12 +16,12 @@ class Person extends Component {
         }
     
         componentDidMount() {
-            this.focusInput()
-        }
-        focusInput() {
             if (this.props.position === 0) {
                 this.inputElement.current.focus()
             }
+        }
+        focus() {
+            this.inputElement.current.focus()
         }
     render () {
         console.log('[Person.js] Inside Render()')
@@ -48,4 +48,4 @@ Person.propTypes = {
     change: PropTypes.func
 }
 
-export default withClass(Person, classes.Person)
+export default Person
